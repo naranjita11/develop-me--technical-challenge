@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "../src/components/Header";
+import PlayerForm from "./components/PlayerForm";
+import PlayerDisplay from "./components/PlayerDisplay";
+import CreateButton from "./components/CreateButton";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+
+      <div className="card-deck row mb-4">
+        <PlayerForm />
+        <PlayerDisplay />
+      </div>
+
+      <CreateButton />
+    </>
   );
 }
 
