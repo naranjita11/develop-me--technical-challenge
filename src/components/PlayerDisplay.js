@@ -1,9 +1,20 @@
-// import { useState } from "react";
+import { useState } from "react";
+import PlayerForm from "../components/PlayerForm";
 
 const PlayerDisplay = () => {
 
-    // const [players, setPlayers] = useState([]);
+    const [name, setName] = useState("");
+    const [players, setPlayers] = useState([]);
 
+    const handleChangeName = (e) => {
+        setName(e.currentTarget.value );
+    }
+
+    const handleAddPlayer = (e) => {
+        e.preventDefault();
+        setPlayers([...players, name]);
+        setName("");
+    }
     const randomise = (array) => {
 
         for (let i = array.length - 1; i >= 0; i--) {
@@ -15,7 +26,6 @@ const PlayerDisplay = () => {
             // let t = array[i];array[i] = array[j]; array[j] = t
             [array[i], array[j]] = [array[j], array[i]];
         }
-
         return array;
     }
 
@@ -26,14 +36,21 @@ const PlayerDisplay = () => {
     };
 
     return (
-        <>
+        <div className="card-deck row mb-4">
+
+            <PlayerForm
+                value={ name }
+                handleChange={ handleChangeName }
+                handleAdd={ handleAddPlayer }
+            />
+
             <div className="card card-body col-md-6 mt-4">
                 <h4 className="card-title">The contenders are:</h4>
-                {/* <ul className="card-body list-group mt-4">
+                <ul className="list-group mt-4">
                 { players.map((name, i) => (
                     <li className="list-group-item" key={ i }>{ name }</li>
                 )) }
-                </ul> */}
+                </ul>
 
                 <button
                     className="btn btn-primary"
@@ -42,7 +59,7 @@ const PlayerDisplay = () => {
                 </button>
             </div>
             
-        </>
+        </div>
     );
 
 }

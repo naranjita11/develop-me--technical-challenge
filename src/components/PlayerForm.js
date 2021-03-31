@@ -1,19 +1,4 @@
-import { useState } from "react";
-
-const PlayerForm = () => {
-
-    const [name, setName] = useState("");
-    const [players, setPlayers] = useState([]);
-
-    const handleChange = (e) => {
-        setName(e.currentTarget.value );
-    }
-
-    const handleAdd = (e) => {
-        e.preventDefault();
-        setPlayers([...players, name]);
-        setName("");
-    }
+const PlayerForm = ({ value, handleChange, handleAdd }) => {
 
     return (
         <>
@@ -26,7 +11,7 @@ const PlayerForm = () => {
                             className="form-control ml-4"
                             type="text"
                             placeholder="name"
-                            value={ name }
+                            value={ value }
                             onChange={ handleChange }
                         />
                     </div>
