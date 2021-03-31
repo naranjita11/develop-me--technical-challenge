@@ -1,4 +1,4 @@
-const PlayerForm = ({ label, placeholder, value, handleChange, handleAdd, buttonText, array }) => {
+const PlayerForm = ({ label, placeholder, value, handleChange, handleAdd, buttonText }) => {
 
     return (
         <>
@@ -19,12 +19,6 @@ const PlayerForm = ({ label, placeholder, value, handleChange, handleAdd, button
                     onClick={ handleAdd }
                     >{ buttonText }
                 </button>
-
-                <ul className="list-group mt-4">
-                    { array.map((value, i) => (
-                        <li className="list-group-item" key={ i }>{ value }</li>
-                    )) }
-                </ul>
             </form>     
         </>
     )

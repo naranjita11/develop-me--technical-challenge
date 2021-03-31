@@ -1,14 +1,18 @@
 import { useState } from "react";
+
 import PlayerForm from "../components/PlayerForm";
+import NamesArray from "../components/NamesArray";
+import RandomiseButton from "../components/RandomiseButton";
 import PlayerPairings from "../components/PlayerPairings";
 
 const PlayerDisplay = () => {
 
     const [name, setName] = useState("");
     const [players, setPlayers] = useState([]);
+    const [randomisedPlayers, setRandomisedPlayers] = useState([]);
 
     const handleChangeName = (e) => {
-        setName(e.currentTarget.value );
+        setName(e.currentTarget.value);
     }
 
     const handleAddPlayer = (e) => {
@@ -16,23 +20,21 @@ const PlayerDisplay = () => {
         setPlayers([...players, name]);
         setName("");
     }
+
     const randomise = (array) => {
 
         for (let i = array.length - 1; i >= 0; i--) {
-            let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
-            // swap elements array[i] and array[j]
-            // we use "destructuring assignment" syntax to achieve that
-            // you'll find more details about that syntax in later chapters
-            // same can be written as:
-            // let t = array[i];array[i] = array[j]; array[j] = t
+            let j = Math.floor(Math.random() * (i + 1)); 
             [array[i], array[j]] = [array[j], array[i]];
         }
-        return array;
+        return array;   
     }
 
-    const handleRandomise = (e) => {
-        randomise(players);
-        console.log(players);
+    const handleRandomiseArray = (e) => {
+        e.preventDefault();
+        const copyiedArr = [...players ];
+        setRandomisedPlayers(randomise(copyiedArr));
+
     };
 
     return (
@@ -49,21 +51,30 @@ const PlayerDisplay = () => {
                     handleChange={ handleChangeName }
                     buttonText="Add player"
                     handleAdd={ handleAddPlayer }
+                />
+
+                <NamesArray
                     array={ players } 
                 />
+
+                {/* <ul className="list-group mt-4">
+                    { players.map((value, i) => (
+                        <li className="list-group-item" key={ i }>{ value }</li>
+                    )) }
+                </ul> */}
                 
             </div>
 
             <div className="card card-body col-md-6 mt-4">
-                <button
-                    disabled={ !(players.length % 4 === 0 && players.length > 0) }
-                    className="btn btn-success"
-                    onClick={ handleRandomise }
-                    >Generate random pairings
-                </button>
+                
+                <RandomiseButton
+                    arrayLength={ players.length }
+                    handleChange={ handleRandomiseArray }  
+                    buttonText="Generate random pairings"
+                />
 
                 <PlayerPairings
-                    // array={ players }
+                    array={ randomisedPlayers }
                 />
 
             </div>
