@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PlayerForm from "../components/PlayerForm";
+import PlayerPairings from "../components/PlayerPairings";
 
 const PlayerDisplay = () => {
 
@@ -38,28 +39,33 @@ const PlayerDisplay = () => {
         <div className="card-deck row mb-4">
 
             <div className="card card-body col-md-6 mt-4">
-                <h4 className="card-title">Add 4 players, one at a time</h4>
+                
+                <h4 className="card-title">Add 4 or 8 player names, one at a time</h4>
+                
                 <PlayerForm
                     label="Name"
+                    placeholder="name"
                     value={ name }
                     handleChange={ handleChangeName }
                     buttonText="Add player"
                     handleAdd={ handleAddPlayer }
+                    array={ players } 
                 />
-                <ul className="list-group mt-4">
-                    { players.map((name, i) => (
-                        <li className="list-group-item" key={ i }>{ name }</li>
-                    )) }
-                </ul>
+                
             </div>
 
             <div className="card card-body col-md-6 mt-4">
-                {/* <h4 className="card-title">The contenders are:</h4> */}
                 <button
+                    disabled={ !(players.length % 4 === 0 && players.length > 0) }
                     className="btn btn-success"
                     onClick={ handleRandomise }
                     >Generate random pairings
                 </button>
+
+                <PlayerPairings
+                    // array={ players }
+                />
+
             </div>
             
         </div>

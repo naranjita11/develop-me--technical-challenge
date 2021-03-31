@@ -1,4 +1,4 @@
-const PlayerForm = ({ label, value, handleChange, handleAdd, buttonText }) => {
+const PlayerForm = ({ label, placeholder, value, handleChange, handleAdd, buttonText, array }) => {
 
     return (
         <>
@@ -8,16 +8,23 @@ const PlayerForm = ({ label, value, handleChange, handleAdd, buttonText }) => {
                     <input
                         className="form-control ml-4"
                         type="text"
-                        placeholder="name"
+                        placeholder={ placeholder }
                         value={ value }
                         onChange={ handleChange }
                     />
                 </div>
+
                 <button
                     className="btn btn-primary"
                     onClick={ handleAdd }
                     >{ buttonText }
                 </button>
+
+                <ul className="list-group mt-4">
+                    { array.map((value, i) => (
+                        <li className="list-group-item" key={ i }>{ value }</li>
+                    )) }
+                </ul>
             </form>     
         </>
     )
