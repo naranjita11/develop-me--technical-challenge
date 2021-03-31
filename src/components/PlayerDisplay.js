@@ -30,7 +30,6 @@ const PlayerDisplay = () => {
     }
 
     const handleRandomise = (e) => {
-        let players = ["Sven", "Mathilde", "Owen", "Bill"];
         randomise(players);
         console.log(players);
     };
