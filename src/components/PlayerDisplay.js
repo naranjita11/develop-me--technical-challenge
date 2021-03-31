@@ -37,22 +37,26 @@ const PlayerDisplay = () => {
     return (
         <div className="card-deck row mb-4">
 
-            <PlayerForm
-                value={ name }
-                handleChange={ handleChangeName }
-                handleAdd={ handleAddPlayer }
-            />
+            <div className="card card-body col-md-6 mt-4">
+                <h4 className="card-title">Add 4 players, one at a time</h4>
+                <PlayerForm
+                    label="Name"
+                    value={ name }
+                    handleChange={ handleChangeName }
+                    buttonText="Add player"
+                    handleAdd={ handleAddPlayer }
+                />
+                <ul className="list-group mt-4">
+                    { players.map((name, i) => (
+                        <li className="list-group-item" key={ i }>{ name }</li>
+                    )) }
+                </ul>
+            </div>
 
             <div className="card card-body col-md-6 mt-4">
-                <h4 className="card-title">The contenders are:</h4>
-                <ul className="list-group mt-4">
-                { players.map((name, i) => (
-                    <li className="list-group-item" key={ i }>{ name }</li>
-                )) }
-                </ul>
-
+                {/* <h4 className="card-title">The contenders are:</h4> */}
                 <button
-                    className="btn btn-primary"
+                    className="btn btn-success"
                     onClick={ handleRandomise }
                     >Generate random pairings
                 </button>
