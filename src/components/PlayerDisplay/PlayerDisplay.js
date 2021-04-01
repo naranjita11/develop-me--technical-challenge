@@ -1,11 +1,11 @@
 import { useState } from "react";
+import PlayerForm from "../PlayerForm";
+import NamesArray from "../NamesArray";
+import RandomiseButton from "../RandomiseButton";
+import PlayerPairings from "../PlayerPairings";
+import CreateButton from "../CreateButton";
 
-import PlayerForm from "../components/PlayerForm";
-import NamesArray from "../components/NamesArray";
-import RandomiseButton from "../components/RandomiseButton";
-import PlayerPairings from "../components/PlayerPairings";
-
-const PlayerDisplay = () => {
+const PlayerDisplay = ({ handleSave }) => {
 
     const [name, setName] = useState("");
     const [players, setPlayers] = useState([]);
@@ -34,6 +34,12 @@ const PlayerDisplay = () => {
         e.preventDefault();
         const copyiedArr = [...players ];
         setRandomisedPlayers(randomise(copyiedArr));
+
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleSave({ randomisedPlayers });
 
     };
 
@@ -80,7 +86,10 @@ const PlayerDisplay = () => {
             </div>
 
             
-
+            <CreateButton
+                handleCreate={ handleSubmit }
+                buttonText="Start Tournament!"
+            />
             
         </>
     );
