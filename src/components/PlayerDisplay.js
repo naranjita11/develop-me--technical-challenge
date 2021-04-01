@@ -38,48 +38,51 @@ const PlayerDisplay = () => {
     };
 
     return (
-        <div className="card-deck row mb-4">
+        
+        <>
+            <div className="card-deck row mb-4">
 
-            <div className="card card-body col-md-6 mt-4">
-                
-                <h4 className="card-title">Add 4 or 8 player names, one at a time</h4>
-                
-                <PlayerForm
-                    label="Name"
-                    placeholder="name"
-                    value={ name }
-                    handleChange={ handleChangeName }
-                    buttonText="Add player"
-                    handleAdd={ handleAddPlayer }
-                />
+                <div className="card card-body col-md-6 mt-4">
+                    
+                    <h4 className="card-title mb-4">Add 4 or 8 player names, one at a time</h4>
+                    
+                    <PlayerForm
+                        label="Name"
+                        placeholder="type here!"
+                        value={ name }
+                        handleChange={ handleChangeName }
+                        buttonText="Add player"
+                        handleAdd={ handleAddPlayer }
+                    />
 
-                <NamesArray
-                    array={ players } 
-                />
+                    <NamesArray
+                        array={ players } 
+                    />
+                    
+                </div>
 
-                {/* <ul className="list-group mt-4">
-                    { players.map((value, i) => (
-                        <li className="list-group-item" key={ i }>{ value }</li>
-                    )) }
-                </ul> */}
+                <div className="card card-body col-md-6 mt-4">
+
+                    {/* <h4 className="card-title">Your players are...</h4> */}
+                    
+                    <RandomiseButton
+                        arrayLength={ players.length }
+                        handleChange={ handleRandomiseArray }  
+                        buttonText="Randomly generate starting pairs"
+                    />
+
+                    <PlayerPairings
+                        array={ randomisedPlayers }
+                    />
+
+                </div>
                 
             </div>
 
-            <div className="card card-body col-md-6 mt-4">
-                
-                <RandomiseButton
-                    arrayLength={ players.length }
-                    handleChange={ handleRandomiseArray }  
-                    buttonText="Generate random pairings"
-                />
-
-                <PlayerPairings
-                    array={ randomisedPlayers }
-                />
-
-            </div>
             
-        </div>
+
+            
+        </>
     );
 
 }

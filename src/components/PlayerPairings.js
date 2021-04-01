@@ -1,12 +1,30 @@
 const PlayerPairings = ({ array }) => {
 
+    const badgeStyling = {
+        fontSize: 1 + "rem",
+    }
+
     return (
-        <div>
-            <ul className="list-group mt-4">
-                    { array.map((value, i) => (
-                        <li className="list-group-item" key={ i }>{ value }</li>
-                    )) }
-            </ul>
+        <div className="mt-4 mb-0 text-center">
+            <div>
+                <span style={ badgeStyling } className="badge bg-info text-dark m-2">{ array[0] }</span>
+                <span style={ badgeStyling } className="badge bg-light text-dark">versus</span>
+                <span style={ badgeStyling } className="badge bg-info text-dark m-2">{ array[1] }</span><br />
+
+                <span style={ badgeStyling } className="badge bg-info text-dark m-2">{ array[2] }</span>
+                <span style={ badgeStyling } className="badge bg-light text-dark">versus</span>
+                <span style={ badgeStyling } className="badge bg-info text-dark m-2">{ array[3] }</span>
+            </div>
+
+            <div>
+                <span style={ badgeStyling } className="badge bg-info text-dark m-2">{ array[4] }</span>
+                <span style={ badgeStyling } className="badge bg-light text-dark">versus</span>
+                <span style={ badgeStyling } className="badge bg-info text-dark m-2">{ array[5] }</span><br />
+
+                <span style={ badgeStyling } className="badge bg-info text-dark m-2">{ array[6] }</span>
+                <span style={ badgeStyling } className="badge bg-light text-dark">versus</span>
+                <span style={ badgeStyling } className="badge bg-info text-dark m-2">{ array[7] }</span>
+            </div>
         </div>
         
     );

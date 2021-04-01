@@ -4,9 +4,9 @@ const PlayerForm = ({ label, placeholder, value, handleChange, handleAdd, button
         <>
             <form className="form-group">
                 <div className="form-inline mb-4">
-                    <label>{ label }</label>
+                    <label className="mr-2 mb-2">{ label }</label>
                     <input
-                        className="form-control ml-4"
+                        className="form-control mb-2"
                         type="text"
                         placeholder={ placeholder }
                         value={ value }
