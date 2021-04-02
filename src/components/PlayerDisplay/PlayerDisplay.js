@@ -1,4 +1,5 @@
 import { useState } from "react";
+import history from "../../history";
 import PlayerForm from "../PlayerForm";
 import NamesArray from "../NamesArray";
 import RandomiseButton from "../RandomiseButton";
@@ -40,15 +41,16 @@ const PlayerDisplay = ({ handleSave }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         handleSave({ randomisedPlayers });
+        history.push("/started");
 
     };
 
     return (
         
         <>
-            <div className="card-deck row mb-4">
+            <div className="card-deck row">
 
-                <div className="card card-body col-md-6 mt-4">
+                <div className="card card-body col-md-6 mb-4">
                     
                     <h4 className="card-title mb-4">Add 4 or 8 player names, one at a time</h4>
                     
@@ -67,7 +69,7 @@ const PlayerDisplay = ({ handleSave }) => {
                     
                 </div>
 
-                <div className="card card-body col-md-6 mt-4">
+                <div className="card card-body col-md-6 mb-4">
 
                     {/* <h4 className="card-title">Your players are...</h4> */}
                     

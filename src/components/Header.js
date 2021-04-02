@@ -6,7 +6,7 @@ class Header extends Component {
       // let {  } = this.props;
 
       return (
-        <header className="jumbotron mt-4 mb-0 text-center">
+        <header className="jumbotron mt-4 mb-4 text-center">
           <h1>Table Tennis Tournament</h1>
         </header> 
       )
