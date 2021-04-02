@@ -7,6 +7,7 @@ import {
 import history from "./history";
 import Header from "../src/components/Header";
 import PlayerDisplay from "./components/PlayerDisplay";
+import Round from "./components/Round";
 // import FourOhFour from './FourOhFour';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
             <PlayerDisplay />
           </Route>
           <Route exact path="/started">
-
+            <Round />
           </Route>
         {/* </Switch>
         <FourOhFour /> */}
