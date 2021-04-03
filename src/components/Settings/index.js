@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import PlayerDisplay from "./PlayerDisplay";
+import Settings from "./Settings";
 import { saveSettings } from "../../data/actions";
 
 const mapDispatchToProps = dispatch => {
@@ -8,4 +8,4 @@ const mapDispatchToProps = dispatch => {
     };
 }
 
-export default connect(null, mapDispatchToProps)(PlayerDisplay);
+export default connect(null, mapDispatchToProps)(Settings);

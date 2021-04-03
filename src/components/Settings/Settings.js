@@ -1,5 +1,5 @@
 import { useState } from "react";
-import history from "../../history";
+// import history from "../../history";
 import PlayerForm from "../PlayerForm";
 import NamesArray from "../NamesArray";
 import RandomiseButton from "../RandomiseButton";
@@ -35,14 +35,11 @@ const PlayerDisplay = ({ handleSave }) => {
         e.preventDefault();
         const copyiedArr = [...players ];
         setRandomisedPlayers(randomise(copyiedArr));
-
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         handleSave({ randomisedPlayers });
-        history.push("/started");
-
     };
 
     return (
