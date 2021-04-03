@@ -1,6 +1,8 @@
 const initial = {
-    tournamentStarted: false,
+    stage: "",
+// quarterFinals, semiAndFinals, success
     randomisedPlayers: [],
+    winner: "",
 }
 
 export default initial;

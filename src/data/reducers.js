@@ -6,7 +6,15 @@ import initial from "./initial";
 const saveSettings = (state, { randomisedPlayers }) => {
     return {
     ...state,
-    tournamentStarted: true,
+    stage: "quarterFinals",
+    randomisedPlayers: randomisedPlayers,
+    }
+};
+
+const saveSettingsQF = (state, { randomisedPlayers }) => {
+    return {
+    ...state,
+    stage: "SemiAndFinals",
     randomisedPlayers: randomisedPlayers,
     }
 };
@@ -15,6 +23,7 @@ const reducer = (state, action) => {
     switch (action.type) {
         case "RESET": return initial;
         case "SAVE_SETTINGS": return saveSettings(state, action);
+        case "SAVE_QUARTERFINALS": return saveSettingsQF(state, action);
         default: return state;
     }
 };
