@@ -4,7 +4,7 @@ import { saveQuarterFinals } from "../../data/actions";
 
 const mapStateToProps = state => {
     return {
-      randomisedPlayers: state.randomisedPlayers,
+      array: state.randomisedPlayers,
     };
   };
 

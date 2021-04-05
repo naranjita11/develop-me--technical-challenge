@@ -1,6 +1,6 @@
 const PlayerButton = ({ name, selected, handleSelect }) => {
 
-    let selectedColour = selected ? "green" : "grey";
+    let selectedColour = selected ? "hotpink" : "grey";
 
     return (
         <button
