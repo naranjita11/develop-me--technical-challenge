@@ -5,9 +5,23 @@ export const saveSettings = ({ randomisedPlayers }) => {
   };
 };
 
-export const saveQuarterFinals = ({ randomisedPlayers }) => {
+export const saveQuarterFinals = ({ qfWinners }) => {
   return {
     type: "SAVE_QUARTERFINALS",
-    randomisedPlayers: randomisedPlayers,
+    qfWinners: qfWinners,
+  };
+};
+
+export const saveSemiFinals = ({ sfWinners }) => {
+  return {
+    type: "SAVE_SEMIFINALS",
+    sfWinners: sfWinners,
+  };
+};
+
+export const saveWinner = ({ winner }) => {
+  return {
+    type: "SAVE_WINNER",
+    winner: winner,
   };
 };

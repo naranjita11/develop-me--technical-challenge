@@ -1,12 +1,23 @@
-// import { useState } from "react";
+import { useState } from "react";
 import GamePairs from "../GamePairs";
 import CreateButton from "../CreateButton";
 
-const SemiAndFinals = ({ array }) => {
+const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
 
-    // const [roundWinners, setRoundWinners] = useState([]);
+    const [sfWinners, setSfWinners] = useState([]);
+    const [finalists, setFinalists] = useState(["?", "?"]);
+    const [winner, setWinner] = useState("");
 
+    const handleWinnersSubmit = (e) => {
+        e.preventDefault();
+        setFinalists(sfWinners);
+        handleSaveSF({ sfWinners });
+    };
 
+    const handleWinnerSubmit = (e) => {
+        e.preventDefault();
+        handleSaveF({ winner });
+    };
 
     return (
 
@@ -16,9 +27,22 @@ const SemiAndFinals = ({ array }) => {
             
                 <div className="mt-4 text-center">
                     <h4>Click who wins the semi-finals!</h4>
-                    <GamePairs />
-                    <GamePairs />
+                    <GamePairs 
+                        name1={ array[0] }
+                        name2={ array[1] }
+                        handleSubmit={ (name) => setSfWinners([...sfWinners, name]) }
+                    />
+                    <GamePairs
+                        name1={ array[2] }
+                        name2={ array[3] }
+                        handleSubmit={ (name) => setSfWinners([...sfWinners, name]) }
+                    />
                 </div>
+
+                <CreateButton
+                handleCreate={ handleWinnersSubmit }
+                buttonText="Next round..."
+            />
 
             </div>
 
@@ -26,19 +50,22 @@ const SemiAndFinals = ({ array }) => {
             
                 <div className="mt-4 text-center">
                     <h4>Click who wins the final!</h4>
-                    <GamePairs />
+                    <GamePairs
+                        name1={ finalists[0] }
+                        name2={ finalists[1] }
+                        handleSubmit={ (name) => setWinner(name) }
+                    />
 
                 </div>
 
+                <CreateButton 
+                handleCreate={ handleWinnerSubmit }
+                buttonText="Submit winner!"    
+                />
+
             </div>
 
-            <CreateButton 
-                // handleCreate={ handleSubmit }
-                buttonText="Submit winner!"    
-            />
-
         </div>
-        
     );
 }
 
