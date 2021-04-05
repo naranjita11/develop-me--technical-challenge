@@ -9,6 +9,7 @@ import Header from "../Header";
 import Settings from "../Settings";
 import QuarterFinals from "../QuarterFinals";
 import SemiAndFinals from "../SemiAndFinals";
+import Success from "../Success";
 // import FourOhFour from './FourOhFour';
 
 function App({ stage }) {
@@ -21,6 +22,10 @@ function App({ stage }) {
 
   if (stage === "semiAndFinals") {
     currentStage = <SemiAndFinals />
+  };
+
+  if (stage === "success") {
+    currentStage = <Success />
   };
   
   return (
