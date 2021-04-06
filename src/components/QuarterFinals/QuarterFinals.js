@@ -4,12 +4,31 @@ import CreateButton from "../CreateButton";
 
 const QuarterFinals = ({ array, handleSave }) => {
 
+    const [winner1, setWinner1] = useState("");
+    const [winner2, setWinner2] = useState("");
+    const [winner3, setWinner3] = useState("");
+    const [winner4, setWinner4] = useState("");
     const [qfWinners, setQfWinners] = useState([]);
 
     const handleWinnersSubmit = (e) => {
         e.preventDefault();
-        handleSave({ qfWinners });
+        setQfWinners([winner1, winner2, winner3, winner4]);
+        componentDidUpdate(qfWinners);
     };
+
+    const componentDidUpdate = (data) => {
+        if (data.length !== 0) {
+            handleSave({ qfWinners });
+        }
+        console.log(data);
+    };
+
+    // componentDidUpdate(prevProps) {
+        // Typical usage (don't forget to compare props):
+    //     if (this.props.userID !== prevProps.userID) {
+    //       this.fetchData(this.props.userID);
+    //     }
+    // }
 
     return (
         <>
@@ -18,22 +37,22 @@ const QuarterFinals = ({ array, handleSave }) => {
                 <GamePairs
                     name1={ array[0] }
                     name2={ array[1] }
-                    handleSubmit={ (name) => setQfWinners([...qfWinners, name]) }
+                    handleSubmit={ (name) => setWinner1(name) }
                 />
                 <GamePairs
                     name1={ array[2] }
                     name2={ array[3] }
-                    handleSubmit={ (name) => setQfWinners([...qfWinners, name]) }
+                    handleSubmit={ (name) => setWinner2(name) }
                 />
                 <GamePairs
                     name1={ array[4] }
                     name2={ array[5] }
-                    handleSubmit={ (name) => setQfWinners([...qfWinners, name]) }
+                    handleSubmit={ (name) => setWinner3(name) }
                 />
                 <GamePairs
                     name1={ array[6] }
                     name2={ array[7] }
-                    handleSubmit={ (name) => setQfWinners([...qfWinners, name]) }
+                    handleSubmit={ (name) => setWinner4(name)}
                 />
 
             </div>

@@ -4,14 +4,15 @@ import CreateButton from "../CreateButton";
 
 const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
 
-    const [sfWinners, setSfWinners] = useState([]);
+    const [winner1, setWinner1] = useState("");
+    const [winner2, setWinner2] = useState("");
     const [finalists, setFinalists] = useState(["?", "?"]);
     const [winner, setWinner] = useState("");
 
     const handleWinnersSubmit = (e) => {
         e.preventDefault();
-        setFinalists(sfWinners);
-        handleSaveSF({ sfWinners });
+        setFinalists([winner1, winner2]);
+        handleSaveSF({ finalists });
     };
 
     const handleWinnerSubmit = (e) => {
@@ -30,12 +31,12 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
                     <GamePairs 
                         name1={ array[0] }
                         name2={ array[1] }
-                        handleSubmit={ (name) => setSfWinners([...sfWinners, name]) }
+                        handleSubmit={ (name) => setWinner1(name) }
                     />
                     <GamePairs
                         name1={ array[2] }
                         name2={ array[3] }
-                        handleSubmit={ (name) => setSfWinners([...sfWinners, name]) }
+                        handleSubmit={ (name) => setWinner2(name) }
                     />
                 </div>
 
