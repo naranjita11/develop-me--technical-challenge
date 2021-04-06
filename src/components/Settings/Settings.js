@@ -10,6 +10,7 @@ const PlayerDisplay = ({ handleSave }) => {
 
     const [name, setName] = useState("");
     const [players, setPlayers] = useState([]);
+    const [message, setMessage] = useState("Names need to be between 2 and 16 letters long");
     const [randomisedPlayers, setRandomisedPlayers] = useState([]);
 
     const handleChangeName = (e) => {
@@ -18,8 +19,15 @@ const PlayerDisplay = ({ handleSave }) => {
 
     const handleAddPlayer = (e) => {
         e.preventDefault();
-        setPlayers([...players, name]);
-        setName("");
+        if (players.includes(name)) {
+            setMessage("Each name needs to be unique!");
+        }
+
+        else {
+            setPlayers([...players, name]);
+            setName("");
+            setMessage("");
+        }
     }
 
     const randomise = (array) => {
@@ -56,8 +64,10 @@ const PlayerDisplay = ({ handleSave }) => {
                         placeholder="type here!"
                         value={ name }
                         handleChange={ handleChangeName }
+                        validationMessage={ message }
                         buttonText="Add player"
                         handleAdd={ handleAddPlayer }
+                        disableConditions={ name.length < 2 || players.length >= 8 }
                     />
 
                     <NamesArray
