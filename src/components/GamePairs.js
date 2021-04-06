@@ -24,7 +24,7 @@ const GamePairs = ({ name1, name2, handleSubmit }) => {
                 name={ name1 }
             />
 
-            <span className="badge bg-light text-dark">plays</span>
+            <span className="badge bg-light text-dark m-2">plays</span>
 
             <PlayerButton
                 selected={ selected === 2 }

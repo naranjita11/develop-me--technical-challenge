@@ -21,8 +21,8 @@ const QuarterFinals = ({ array, handleSave }) => {
 
     return (
         <>
-            <div className="mt-4 text-center">
-                <h4>Click who wins!</h4>
+            <div className="card card-body mb-0 text-center ">
+                <h4 className="card-title mb-4">Click who wins each game!</h4>
                 <GamePairs
                     name1={ array[0] }
                     name2={ array[1] }
@@ -44,13 +44,15 @@ const QuarterFinals = ({ array, handleSave }) => {
                     handleSubmit={ (name) => setWinner4(name)}
                 />
 
+                <CreateButton
+                    handleCreate={ handleWinnersSubmit }
+                    buttonText="Next round..."
+                />
+                <p>{ message }</p>  
+
             </div>
 
-            <CreateButton
-                handleCreate={ handleWinnersSubmit }
-                buttonText="Next round..."
-            />
-            <p>{ message }</p>
+            
         </>
     );
 }

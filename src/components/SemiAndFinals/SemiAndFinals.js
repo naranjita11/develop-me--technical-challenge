@@ -33,12 +33,12 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
 
     return (
 
-        <div className="card-deck row">
+        <div className="card-deck row p-3">
 
-            <div className="card card-body col-md-6 mb-4">
+            <div className="card card-body mb-0">
             
-                <div className="mt-4 text-center">
-                    <h4>Click who wins the semi-finals!</h4>
+                <div className="text-center">
+                    <h4 className="card-title mb-4">Click who wins the semi-finals!</h4>
                     <GamePairs 
                         name1={ array[0] }
                         name2={ array[1] }
@@ -61,10 +61,10 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
 
             </div>
 
-            <div className="card card-body col-md-6 mb-4">
+            <div className="card card-body mb-0">
             
-                <div className="mt-4 text-center">
-                    <h4>Click who wins the final!</h4>
+                <div className="text-center">
+                    <h4 className="card-title mb-4">Click who wins the final!</h4>
                     <GamePairs
                         name1={ finalists[0] }
                         name2={ finalists[1] }

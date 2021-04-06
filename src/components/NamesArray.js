@@ -16,7 +16,7 @@ const NamesArray = ({ array }) => {
 
             <div className="mt-2">
                 { array.map((value, i) => (
-                    <span className="badge bg-info m-2" style={ badgeStylingName } key={ i }>{ value }</span>
+                    <span className="badge bg-success m-2" style={ badgeStylingName } key={ i }>{ value }</span>
                 )) }
             </div>
         </>

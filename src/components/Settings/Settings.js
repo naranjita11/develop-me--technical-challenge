@@ -9,7 +9,7 @@ const PlayerDisplay = ({ handleSave, handleSaveQF }) => {
 
     const [name, setName] = useState("");
     const [players, setPlayers] = useState([]);
-    const [message, setMessage] = useState("Names need to be between 2 and 16 letters long");
+    const [message, setMessage] = useState("Names need to be between 2 and 16 letters long.");
     const [randomisedPlayers, setRandomisedPlayers] = useState([]);
 
     const handleChangeName = (e) => {
@@ -55,10 +55,10 @@ const PlayerDisplay = ({ handleSave, handleSaveQF }) => {
 
     return (
         
-        <>
-            <div className="card-deck row">
+        <div className="mb-4">
+            <div className="card-deck row mb-4 p-3">
 
-                <div className="card card-body col-md-6 mb-4">
+                <div className="card card-body mb-0">
                     
                     <h4 className="card-title mb-4">Add 4 or 8 player names, one at a time</h4>
                     
@@ -79,7 +79,7 @@ const PlayerDisplay = ({ handleSave, handleSaveQF }) => {
                     
                 </div>
 
-                <div className="card card-body col-md-6 mb-4">
+                <div className="card card-body mb-0">
 
                     {/* <h4 className="card-title">Your players are...</h4> */}
                     
@@ -105,7 +105,7 @@ const PlayerDisplay = ({ handleSave, handleSaveQF }) => {
                 buttonText="Start Tournament!"
             />
             
-        </>
+        </div>
     );
 
 }

@@ -4,7 +4,7 @@ const RandomiseButton = ({ arrayLength, handleChange, buttonText }) => {
         <>
             <button
                 disabled={ !(arrayLength % 4 === 0 && arrayLength > 0) }
-                className="btn btn-success"
+                className="btn btn-primary"
                 onClick={ handleChange }
                 >{ buttonText }
             </button>
