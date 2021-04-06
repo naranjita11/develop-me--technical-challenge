@@ -5,7 +5,7 @@ import RandomiseButton from "../RandomiseButton";
 import PlayerPairings from "../PlayerPairings";
 import CreateButton from "../CreateButton";
 
-const PlayerDisplay = ({ handleSave }) => {
+const PlayerDisplay = ({ handleSave, handleSaveQF }) => {
 
     const [name, setName] = useState("");
     const [players, setPlayers] = useState([]);
@@ -46,7 +46,11 @@ const PlayerDisplay = ({ handleSave }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleSave(randomisedPlayers);
+        if (randomisedPlayers.length === 4) {
+            handleSaveQF(randomisedPlayers);
+        }
+
+        else handleSave(randomisedPlayers);
     };
 
     return (
