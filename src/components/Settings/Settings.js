@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import history from "../../history";
 import PlayerForm from "../PlayerForm";
 import NamesArray from "../NamesArray";
 import RandomiseButton from "../RandomiseButton";
@@ -47,7 +46,7 @@ const PlayerDisplay = ({ handleSave }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleSave({ randomisedPlayers });
+        handleSave(randomisedPlayers);
     };
 
     return (

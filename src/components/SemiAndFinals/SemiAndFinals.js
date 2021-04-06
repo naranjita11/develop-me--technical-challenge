@@ -12,12 +12,12 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
     const handleWinnersSubmit = (e) => {
         e.preventDefault();
         setFinalists([winner1, winner2]);
-        handleSaveSF({ finalists });
+        handleSaveSF([winner1, winner2]);
     };
 
     const handleWinnerSubmit = (e) => {
         e.preventDefault();
-        handleSaveF({ winner });
+        handleSaveF(winner);
     };
 
     return (
