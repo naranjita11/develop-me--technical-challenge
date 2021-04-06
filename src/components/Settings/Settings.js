@@ -90,6 +90,7 @@ const PlayerDisplay = ({ handleSave, handleSaveQF }) => {
                     />
 
                     <PlayerPairings
+                        noOfPlayers={ players.length }
                         array={ randomisedPlayers }
                     />
 

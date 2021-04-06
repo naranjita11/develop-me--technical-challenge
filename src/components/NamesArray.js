@@ -1,5 +1,11 @@
 const NamesArray = ({ array }) => {
 
+    const badgeStylingName = {
+        fontSize: 1 + "rem",
+        color: "white",
+        backgroundColor: "pink"
+    }
+
     return (
         <>
             {/* <ul className="list-group mt-4">
@@ -10,7 +16,7 @@ const NamesArray = ({ array }) => {
 
             <div className="mt-2">
                 { array.map((value, i) => (
-                    <span className="badge bg-info text-dark m-2" style={{ fontSize: 1 + "rem" }} key={ i }>{ value }</span>
+                    <span className="badge bg-info m-2" style={ badgeStylingName } key={ i }>{ value }</span>
                 )) }
             </div>
         </>
