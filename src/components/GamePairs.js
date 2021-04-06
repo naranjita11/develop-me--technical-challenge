@@ -19,6 +19,7 @@ const GamePairs = ({ name1, name2, handleSubmit }) => {
         <div className="mb-4 text-center">
             <PlayerButton
                 selected={ selected === 1 }
+                disableCondition={ name1 === "?" }
                 handleSelect={ handlePassData1 }
                 name={ name1 }
             />
@@ -27,6 +28,7 @@ const GamePairs = ({ name1, name2, handleSubmit }) => {
 
             <PlayerButton
                 selected={ selected === 2 }
+                disableCondition={ name2 === "?" }
                 handleSelect={ handlePassData2 }
                 name={ name2 }
             />

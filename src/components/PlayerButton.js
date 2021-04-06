@@ -1,4 +1,4 @@
-const PlayerButton = ({ name, selected, handleSelect }) => {
+const PlayerButton = ({ name, selected, handleSelect, disableCondition }) => {
 
     let selectedColour = selected ? "hotpink" : "grey";
 
@@ -6,6 +6,7 @@ const PlayerButton = ({ name, selected, handleSelect }) => {
         <button
             className="btn btn-primary"
             onClick={ handleSelect }
+            disabled={ disableCondition }
             style={{ backgroundColor: selectedColour }} 
         >{ name }
         </button>

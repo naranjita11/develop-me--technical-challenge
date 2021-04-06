@@ -7,6 +7,7 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
     const [winner1, setWinner1] = useState("");
     const [winner2, setWinner2] = useState("");
     const [message, setMessage] = useState("");
+    const [clicked, setClicked] = useState(false);
     const [finalists, setFinalists] = useState(["?", "?"]);
     const [winner, setWinner] = useState("");
 
@@ -20,6 +21,7 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
         else {
             setFinalists([winner1, winner2]);
             handleSaveSF([winner1, winner2]);
+            setClicked(true);
         }
 
     };
@@ -50,9 +52,11 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
                 </div>
 
                 <CreateButton
+                disableCondition={ clicked }
                 handleCreate={ handleWinnersSubmit }
                 buttonText="Next round..."
                 />
+
                 <p>{ message }</p>
 
             </div>
@@ -69,7 +73,8 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
 
                 </div>
 
-                <CreateButton 
+                <CreateButton
+                disableCondition={ winner === "" }
                 handleCreate={ handleWinnerSubmit }
                 buttonText="Submit winner!"    
                 />
