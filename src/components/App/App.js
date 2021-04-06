@@ -1,16 +1,9 @@
 import "../../App.css";
-// import {
-  // Router,
-  // Route,
-  // Switch,
-// } from "react-router-dom";
-// import history from "./history";
 import Header from "../Header";
 import Settings from "../Settings";
 import QuarterFinals from "../QuarterFinals";
 import SemiAndFinals from "../SemiAndFinals";
 import Success from "../Success";
-// import FourOhFour from './FourOhFour';
 
 function App({ stage }) {
 
@@ -30,26 +23,9 @@ function App({ stage }) {
   
   return (
     <>
-      <Header />
+      { stage !== "success" ? <Header /> : null }
       { currentStage }
     </>
-
-    // <Router history={ history }>
-    //   <>
-    //     <Switch>
-    //       <Header />
-    //       <Route exact path="/">
-    //         <PlayerDisplay />
-    //       </Route>
-    //       <Route exact path="/started">
-    //         <Round />
-    //       </Route>
-
-
-    //     </Switch>
-    //     <FourOhFour />
-    //   </>
-    // // </Router>
   );
 }
 
