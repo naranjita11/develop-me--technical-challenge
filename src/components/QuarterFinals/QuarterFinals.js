@@ -8,27 +8,11 @@ const QuarterFinals = ({ array, handleSave }) => {
     const [winner2, setWinner2] = useState("");
     const [winner3, setWinner3] = useState("");
     const [winner4, setWinner4] = useState("");
-    const [qfWinners, setQfWinners] = useState([]);
 
     const handleWinnersSubmit = (e) => {
         e.preventDefault();
-        setQfWinners([winner1, winner2, winner3, winner4]);
-        componentDidUpdate(qfWinners);
+        handleSave([winner1, winner2, winner3, winner4]);
     };
-
-    const componentDidUpdate = (data) => {
-        if (data.length !== 0) {
-            handleSave({ qfWinners });
-        }
-        console.log(data);
-    };
-
-    // componentDidUpdate(prevProps) {
-        // Typical usage (don't forget to compare props):
-    //     if (this.props.userID !== prevProps.userID) {
-    //       this.fetchData(this.props.userID);
-    //     }
-    // }
 
     return (
         <>
