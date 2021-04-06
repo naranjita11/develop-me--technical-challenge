@@ -8,10 +8,15 @@ const QuarterFinals = ({ array, handleSave }) => {
     const [winner2, setWinner2] = useState("");
     const [winner3, setWinner3] = useState("");
     const [winner4, setWinner4] = useState("");
+    const [message, setMessage] = useState("");
 
     const handleWinnersSubmit = (e) => {
         e.preventDefault();
-        handleSave([winner1, winner2, winner3, winner4]);
+        if (winner1 === "" || winner2 === "" || winner3 === "" || winner4 === "") {
+            setMessage("Select a winner from each pair!");
+        }
+
+        else handleSave([winner1, winner2, winner3, winner4]);
     };
 
     return (
@@ -45,6 +50,7 @@ const QuarterFinals = ({ array, handleSave }) => {
                 handleCreate={ handleWinnersSubmit }
                 buttonText="Next round..."
             />
+            <p>{ message }</p>
         </>
     );
 }

@@ -99,6 +99,7 @@ const PlayerDisplay = ({ handleSave, handleSaveQF }) => {
 
             
             <CreateButton
+                disableCondition={ randomisedPlayers.length === 0 }
                 handleCreate={ handleSubmit }
                 buttonText="Start Tournament!"
             />

@@ -6,13 +6,22 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
 
     const [winner1, setWinner1] = useState("");
     const [winner2, setWinner2] = useState("");
+    const [message, setMessage] = useState("");
     const [finalists, setFinalists] = useState(["?", "?"]);
     const [winner, setWinner] = useState("");
 
     const handleWinnersSubmit = (e) => {
         e.preventDefault();
-        setFinalists([winner1, winner2]);
-        handleSaveSF([winner1, winner2]);
+
+        if (winner1 === "" || winner2 === "") {
+            setMessage("Select a winner from each pair!");
+        }
+
+        else {
+            setFinalists([winner1, winner2]);
+            handleSaveSF([winner1, winner2]);
+        }
+
     };
 
     const handleWinnerSubmit = (e) => {
@@ -43,7 +52,8 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
                 <CreateButton
                 handleCreate={ handleWinnersSubmit }
                 buttonText="Next round..."
-            />
+                />
+                <p>{ message }</p>
 
             </div>
 
