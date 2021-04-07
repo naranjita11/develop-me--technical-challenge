@@ -35,7 +35,7 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
 
         <div className="card-deck row">
 
-            <div className="card card-body mb-0 text-center" style={{backgroundColor: "#56A981"}}>
+            <div className="card card-body text-center" style={{backgroundColor: "#56A981"}}>
             
                 <div className="text-center">
                     <h4 className="card-title mb-4" style={{color: "white"}}>Click who wins the semi-finals!</h4>
@@ -62,16 +62,15 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
 
             </div>
 
-            <div className="card card-body mb-0 flex" style={{backgroundColor: "#56A981"}}>
+            <div className="card card-body flex" style={{backgroundColor: "#56A981"}}>
             
-                <div className="text-center">
+                <div className="text-center mb-4">
                     <h4 className="card-title mb-4" style={{color: "white"}}>Click who wins the final!</h4>
                     <GamePairs
                         name1={ finalists[0] }
                         name2={ finalists[1] }
                         handleSubmit={ (name) => setWinner(name) }
                     />
-
                 </div>
 
                 <CreateButton

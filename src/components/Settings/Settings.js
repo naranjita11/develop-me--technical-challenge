@@ -55,7 +55,7 @@ const PlayerDisplay = ({ handleSave, handleSaveQF }) => {
 
     return (
         
-        <div className="mb-4">
+        <div>
             <div className="card-deck row">
 
                 <div className="card card-body mb-4" style={{backgroundColor: "#56A981"}}>

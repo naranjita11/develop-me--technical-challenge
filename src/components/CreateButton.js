@@ -10,7 +10,7 @@ const CreateButton = ({ handleCreate, buttonText, disableCondition, colour }) =>
     return (
         <>
             <button
-                className="btn mb-0 center"
+                className="btn center"
                 style={ buttonStyle }
                 disabled={ disableCondition }
                 type="submit"
