@@ -2,7 +2,7 @@ const Success = ({ winner }) => {
 
     return (
     <div>
-        <div className="jumbotron mt-4 mb-4 text-center successBanner" style={{ color: "white"}}>
+        <div className="jumbotron text-center successBanner" style={{ color: "white"}}>
             <h1 className="mb-4">Well done, { winner }!</h1>
             <h2 className="mb-4">Well done, { winner }!</h2>
             <h3 className="mb-4">Well done, { winner }!</h3>
