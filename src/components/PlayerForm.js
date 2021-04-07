@@ -4,7 +4,7 @@ const PlayerForm = ({ label, placeholder, value, handleChange, validationMessage
         <>
             <form className="form-group">
                 <div className="form-inline">
-                    <label className="mr-2 mb-2">{ label }</label>
+                    <label className="mr-2 mb-2" style={{color: "white"}}>{ label }</label>
                     <input
                         className="form-control mb-2"
                         type="text"
@@ -20,7 +20,8 @@ const PlayerForm = ({ label, placeholder, value, handleChange, validationMessage
                 </p>
 
                 <button
-                    className="btn btn-primary"
+                    className="btn btn-success"
+                    style={{backgroundColor: "white", color: "grey", border: 0}}
                     disabled={ disableConditions }
                     onClick={ handleAdd }
                     >{ buttonText }

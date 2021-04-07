@@ -33,12 +33,12 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
 
     return (
 
-        <div className="card-deck row p-3">
+        <div className="card-deck row">
 
-            <div className="card card-body mb-0">
+            <div className="card card-body mb-0 text-center" style={{backgroundColor: "#56A981"}}>
             
                 <div className="text-center">
-                    <h4 className="card-title mb-4">Click who wins the semi-finals!</h4>
+                    <h4 className="card-title mb-4" style={{color: "white"}}>Click who wins the semi-finals!</h4>
                     <GamePairs 
                         name1={ array[0] }
                         name2={ array[1] }
@@ -53,18 +53,19 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
 
                 <CreateButton
                 disableCondition={ clicked }
+                colour={ "#99d1a3" }
                 handleCreate={ handleWinnersSubmit }
                 buttonText="Next round..."
                 />
 
-                <p>{ message }</p>
+                <p className="mt-2 centre" style={{color: "white"}}>{ message }</p>
 
             </div>
 
-            <div className="card card-body mb-0">
+            <div className="card card-body mb-0 flex" style={{backgroundColor: "#56A981"}}>
             
                 <div className="text-center">
-                    <h4 className="card-title mb-4">Click who wins the final!</h4>
+                    <h4 className="card-title mb-4" style={{color: "white"}}>Click who wins the final!</h4>
                     <GamePairs
                         name1={ finalists[0] }
                         name2={ finalists[1] }
@@ -75,6 +76,7 @@ const SemiAndFinals = ({ array, handleSaveSF, handleSaveF }) => {
 
                 <CreateButton
                 disableCondition={ winner === "" }
+                colour={ "#99d1a3" }
                 handleCreate={ handleWinnerSubmit }
                 buttonText="Submit winner!"    
                 />

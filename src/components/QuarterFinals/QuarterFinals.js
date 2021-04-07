@@ -21,8 +21,8 @@ const QuarterFinals = ({ array, handleSave }) => {
 
     return (
         <>
-            <div className="card card-body mb-0 text-center ">
-                <h4 className="card-title mb-4">Click who wins each game!</h4>
+            <div className="card card-body mb-0 text-center" style={{backgroundColor: "#56A981" }}>
+                <h4 className="card-title mb-4" style={{color: "white"}}>Click who wins each game!</h4>
                 <GamePairs
                     name1={ array[0] }
                     name2={ array[1] }
@@ -46,9 +46,10 @@ const QuarterFinals = ({ array, handleSave }) => {
 
                 <CreateButton
                     handleCreate={ handleWinnersSubmit }
+                    colour={ "#99d1a3" }
                     buttonText="Next round..."
                 />
-                <p>{ message }</p>  
+                <p className="mt-2" style={{color: "white"}}>{ message }</p>  
 
             </div>
 

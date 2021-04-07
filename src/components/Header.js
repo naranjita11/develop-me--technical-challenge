@@ -7,10 +7,10 @@ class Header extends Component {
 
       return (
         <header
-          className="jumbotron mt-4 mb-4 text-center"
-          // style={{ backgroundColor: "cornflowerblue" }} 
+          className="jumbotron mt-4 text-center"
+          style={{ backgroundColor: "#99d1a3", color: "white" }} 
         >
-          <h1>Table Tennis Tournament</h1>
+          <h1><strong>Table Tennis Tournament</strong></h1>
         </header> 
       )
     }

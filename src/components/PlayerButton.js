@@ -1,6 +1,6 @@
 const PlayerButton = ({ name, selected, handleSelect, disableCondition }) => {
 
-    let selectedColour = selected ? "gold" : "#28a745";
+    let selectedColour = selected ? "#E8E569" : "#ebb2cb";
 
     const buttonStyling = {
         fontSize: 1 + "rem",

@@ -3,7 +3,7 @@ const NamesArray = ({ array }) => {
     const badgeStylingName = {
         fontSize: 1 + "rem",
         color: "white",
-        backgroundColor: "pink"
+        backgroundColor: "#ebb2cb"
     }
 
     return (
@@ -16,7 +16,7 @@ const NamesArray = ({ array }) => {
 
             <div className="mt-2">
                 { array.map((value, i) => (
-                    <span className="badge bg-success m-2" style={ badgeStylingName } key={ i }>{ value }</span>
+                    <span className="badge m-2" style={ badgeStylingName } key={ i }>{ value }</span>
                 )) }
             </div>
         </>
