@@ -5,7 +5,6 @@ const CreateButton = ({ handleCreate, buttonText, disableCondition, colour }) =>
         fontSize: 1.5 + "rem",
         backgroundColor: colour,
         border: 0,
-        // marginTop:,
     }
 
     return (

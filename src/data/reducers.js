@@ -1,6 +1,3 @@
-// the reducer gets given the current version of the state
-// and the action that called it, which has a "type" property
-
 import initial from "./initial";
 
 const saveSettings = (state, { randomisedPlayers }) => {
