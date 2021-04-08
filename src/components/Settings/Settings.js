@@ -58,7 +58,7 @@ const PlayerDisplay = ({ handleSave, handleSaveQF }) => {
         <div>
             <div className="card-deck row">
 
-                <div className="card card-body mb-4" style={{backgroundColor: "#56A981"}}>
+                <div className="card card-body card1" style={{backgroundColor: "#56A981"}}>
                     
                     <h4 className="card-title mb-4" style={{ color: "white" }}>Add 4 or 8 player names, one at a time</h4>
                     
@@ -79,7 +79,7 @@ const PlayerDisplay = ({ handleSave, handleSaveQF }) => {
                     
                 </div>
 
-                <div className="card card-body mb-4" style={{backgroundColor: "#56A981"}}>
+                <div className="card card-body" style={{backgroundColor: "#56A981"}}>
                     
                     <RandomiseButton
                         arrayLength={ players.length }

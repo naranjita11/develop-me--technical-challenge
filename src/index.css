@@ -1,9 +1,4 @@
 body {
-  justify-content: center;
-  margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,27 +9,19 @@ code {
     monospace;
 }
 
-/* .root {
-  justify-content: center;
-} */
-
-.jumbotron {
+.titleJumbo {
   margin-top: 15px;
+  margin-bottom: 15px;
   justify-content: center;
-}
-
-.card-deck {
-  margin-bottom: 4;
-  margin-top: 4;
 }
 
 .card {
-  margin-bottom: 4px;
+  background-color: var(--darkGreen);
 }
 
-/* .startButton {
-  margin: bottom 200px;;
-} */
+.card1 {
+  margin-bottom: 15px;
+}
 
 :root {
 
@@ -53,19 +40,14 @@ code {
   
 }
 
-.card {
-  background-color: var(--darkGreen);
-}
 
 .successBanner {
-  margin-top: 4;
+  margin-top: 1.5rem;
   height: 100%;
   animation: stretch infinite;
   animation-duration: 2s;
   animation-timing-function: step-start;
 }
-
-/* FFD700, 4caf50, 6495ED, FF69B4 */
 
 @keyframes stretch {
   0%, 100% {
@@ -84,24 +66,18 @@ code {
 
 
 @media screen and (max-width: 575px) {
-  .container {
-    padding: 0;
-    margin: 0;
-    justify-content: center;
-  }
 
-  .jumbotron {
-    margin-top: 0px;
+  .startButton {
     margin-bottom: 15px;
   }
 
-  .successBanner h1, h2 {
+  .successBanner h1, h5, h6 {
     display: none;
   }
-  
-  .card {
-    border: none;
-    margin: 0;
+
+  .row {
+    margin-right: 0;
+    margin-left: 0;
   }
 
 }
