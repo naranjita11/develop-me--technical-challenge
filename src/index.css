@@ -13,6 +13,19 @@ code {
   margin-top: 15px;
   margin-bottom: 15px;
   justify-content: center;
+  padding: 2rem;
+}
+
+.titleLogo {
+  max-width: 130px;
+}
+
+.successLogo {
+  padding-bottom: 2rem;
+}
+
+.titleJumbo h1 {
+  margin-top: 15px;
 }
 
 .card {

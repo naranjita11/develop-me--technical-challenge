@@ -1,8 +1,11 @@
+import logo from '../../assets/titleLogo.png';
+
 const Success = ({ winner }) => {
 
     return (
     <div>
         <div className="jumbotron text-center successBanner" style={{ color: "white"}}>
+            <img className="successLogo" src={logo} alt="table tennis logo"/>
             <h1 className="mb-4">Well done, { winner }!</h1>
             <h2 className="mb-4">Well done, { winner }!</h2>
             <h3 className="mb-4">Well done, { winner }!</h3>
