@@ -4,7 +4,7 @@
 
 <img src="./TTTournament_screenshot.png" alt="TTTournament_screenshot" style="zoom:50%;"/>
 
-**Instructions**: To view this app ....
+**Instructions**: To view this app visit this URL: https://naranjita11.github.io/develop-me--technical-challenge/
 
 **Brief**: The brief for this challenge was to *create a tool which randomly creates pairings for a table tennis tournament from a list of names collected from the user*.
 
