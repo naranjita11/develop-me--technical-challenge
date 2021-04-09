@@ -2,7 +2,7 @@
 
 **Screenshot**:
 
-<img src="/Users/katefox/Desktop/TTTournament_screenshot.png" alt="TTTournament_screenshot" style="zoom:50%;"/>
+<img src="./TTTournament_screenshot.png" alt="TTTournament_screenshot" style="zoom:50%;"/>
 
 **Instructions**: To view this app ....
 
